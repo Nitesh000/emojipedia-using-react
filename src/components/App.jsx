@@ -3,14 +3,6 @@ import Entry from "./Entry";
 import emojipedia from "../emojipedia";
 
 console.log(emojipedia);
-function dictionaryItem(item) {
-  return <Entry 
-    key={item.id}
-    emoji = {item.emoji}
-    name = {item.name}
-    description = {item.meaning}
-  />
-}
 
 function App() {
   return <div>
@@ -18,7 +10,15 @@ function App() {
         <span>emojipedia</span>
       </h1>
       <dl className="dictionary">
-      {emojipedia.map(dictionaryItem)}
+      {emojipedia.map((item) => {
+    <Entry 
+    key={item.id}
+    emoji = {item.emoji}
+    name = {item.name}
+    description = {item.meaning}
+  />
+}
+)}
       </dl>
   </div>
 }
